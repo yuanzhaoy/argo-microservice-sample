@@ -23,3 +23,4 @@ node_modules/
 
 # Git
 .git/
+applicationset.yaml
