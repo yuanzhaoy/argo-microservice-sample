@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: lab-microservices
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      repoURL: https://github.com/your-github-username/argo-microservice-sample.git
+      revision: main
+      directories:
+      - path: lab/*  # 自动扫描 lab 目录下的所有服务
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/your-github-username/argo-microservice-sample.git
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: lab
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+
