@@ -1,0 +1,25 @@
+# Kubernetes Secrets and Configs
+*.secret.yaml
+*.config.yaml
+
+# Helm
+charts/
+releases/
+
+# Docker
+**/Dockerfile
+**/*.tar
+**/*.log
+
+# IDE and OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*.tmp
+.idea/
+.vscode/
+node_modules/
+
+# Git
+.git/
