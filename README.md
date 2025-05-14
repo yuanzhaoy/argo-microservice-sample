@@ -5,11 +5,13 @@ This repository contains a sample structure for deploying a microservice to a Ku
 ## 📁 Directory Structure
 
 argo-microservice-sample/
-├── application.yaml # ArgoCD Application definition
+├── .gitignore
+├── README.md
+├── applicationset.yaml 
 └── lab/
-└── my-service/
-├── deployment.yaml # Kubernetes Deployment
-└── service.yaml # Kubernetes Service
+    └── my-service/
+        ├── deployment.yaml
+        └── service.yaml
 
 ## 🚀 Getting Started
 
